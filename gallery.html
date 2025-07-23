@@ -20,9 +20,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#tentang">Wisata</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Wisata
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="informasi.html">Informasi Umum</a></li>
+                            <li><a class="dropdown-item" href="fasilitas.html">Fasilitas & Aktivitas</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="event.html">Event</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#kontak">Hubungi Kami</a></li>
                 </ul>
             </div>
@@ -30,17 +38,29 @@
     </nav>
 
     <main>
-        <section class="bg-light" style="padding-top: 150px;">
+        <section class="bg-light page-header-section">
             <div class="container">
-                <h2 class="section-title">Galeri Foto</h2>
-                <p class="text-center lead mb-5">Abadikan momen dan lihat keindahan Pantai Lamaru dari berbagai sudut.</p>
-                <div id="gallery-container" class="row g-4"></div>
+                <div class="video-section mb-5">
+                    <h2 class="section-title">Video Jelajah</h2>
+                    <div class="ratio ratio-16x9 video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="photo-gallery pt-5">
+                    <h2 class="section-title">Galeri Foto</h2>
+                    <p class="text-center lead mb-5">Abadikan momen dan lihat keindahan Pantai Lamaru dari berbagai sudut.</p>
+                    <div id="gallery-container" class="row g-4">
+                        </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer py-4">
-        <div class="container text-center"><p>&copy; 2025 Visit Lamaru. All Rights Reserved.</p></div>
+        <div class="container text-center">
+            <p>&copy; 2025 Visit Lamaru. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -50,10 +70,19 @@
                 .then(response => response.json())
                 .then(data => {
                     const galleryContainer = document.getElementById('gallery-container');
+                    if (!data.gallery || data.gallery.length === 0) {
+                        galleryContainer.innerHTML = '<p class="text-center col-12">Galeri foto belum tersedia.</p>';
+                        return;
+                    }
                     data.gallery.forEach(image => {
                         const galleryCol = document.createElement('div');
                         galleryCol.className = 'col-lg-4 col-md-6 gallery-item';
-                        galleryCol.innerHTML = `<img src="${image.imageUrl}" class="img-fluid" alt="${image.altText}">`;
+
+                        galleryCol.innerHTML = `
+                            <a href="${image.imageUrl}" data-lightbox="lamaru-gallery" data-title="${image.altText}">
+                                <img src="${image.imageUrl}" class="img-fluid" alt="${image.altText}">
+                            </a>
+                        `;
                         galleryContainer.appendChild(galleryCol);
                     });
                 })

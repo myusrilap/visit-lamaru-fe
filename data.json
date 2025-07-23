@@ -1,26 +1,26 @@
 {
-    "events": [
-      {
-        "imageUrl": "https://images.unsplash.com/photo-1519734062-f99918c3952d?q=80&w=2070&auto=format&fit=crop",
-        "altText": "Festival Musik Pantai",
-        "date": "25 AGUSTUS 2025",
-        "title": "Lamaru Beach Music Fest",
-        "description": "Nikmati alunan musik dari band lokal ternama di tepi pantai saat matahari terbenam."
-      },
-      {
-        "imageUrl": "https://images.unsplash.com/photo-1628102490522-d35d9c207909?q=80&w=2070&auto=format&fit=crop",
-        "altText": "Lomba Voli Pantai",
-        "date": "15 SEPTEMBER 2025",
-        "title": "Kompetisi Voli Pantai",
-        "description": "Saksikan tim-tim terbaik bertanding memperebutkan gelar juara dalam turnamen voli tahunan."
-      },
-      {
-        "imageUrl": "https://images.unsplash.com/photo-1533237264876-5d81b3b3a2e2?q=80&w=2070&auto=format&fit=crop",
-        "altText": "Bazaar Kuliner",
-        "date": "5-7 OKTOBER 2025",
-        "title": "Bazaar Kuliner Nusantara",
-        "description": "Manjakan lidah dengan aneka jajanan dan makanan khas dari berbagai daerah di bazaar kuliner."
-      }
+  "events": [
+    {
+      "imageUrl": "https://images.unsplash.com/photo-1519734062-f99918c3952d?q=80&w=2070&auto=format&fit=crop",
+      "altText": "Festival Musik Pantai",
+      "datetime": "2025-08-25T19:00:00",
+      "title": "Lamaru Beach Music Fest",
+      "description": "Nikmati alunan musik dari band lokal ternama di tepi pantai saat matahari terbenam. Sebuah malam yang tak terlupakan dengan bintang-bintang musik indie ternama. Pastikan Anda datang lebih awal untuk mendapatkan tempat terbaik."
+    },
+    {
+      "imageUrl": "https://images.unsplash.com/photo-1628102490522-d35d9c207909?q=80&w=2070&auto=format&fit=crop",
+      "altText": "Lomba Voli Pantai",
+      "datetime": "2025-09-15T09:00:00",
+      "title": "Kompetisi Voli Pantai Tahunan",
+      "description": "Saksikan tim-tim terbaik dari seluruh Kalimantan bertanding memperebutkan gelar juara dalam turnamen voli tahunan. Acara ini akan berlangsung sepanjang hari dengan hadiah menarik bagi para pemenang."
+    },
+    {
+      "imageUrl": "https://images.unsplash.com/photo-1616169999955-871d3c0b1a5e?q=80&w=2070&auto=format&fit=crop",
+      "altText": "Lomba Layang-layang",
+      "datetime": "2025-09-28T10:30:00",
+      "title": "Festival Layang-Layang Internasional",
+      "description": "Langit Lamaru akan dihiasi oleh ratusan layang-layang unik dari berbagai negara. Sebuah pemandangan yang menakjubkan untuk segala usia. Tersedia juga workshop membuat layang-layang untuk anak-anak."
+    }
     ],
     "gallery": [
       {

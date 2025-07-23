@@ -1,0 +1,47 @@
+{
+    "events": [
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1519734062-f99918c3952d?q=80&w=2070&auto=format&fit=crop",
+        "altText": "Festival Musik Pantai",
+        "date": "25 AGUSTUS 2025",
+        "title": "Lamaru Beach Music Fest",
+        "description": "Nikmati alunan musik dari band lokal ternama di tepi pantai saat matahari terbenam."
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1628102490522-d35d9c207909?q=80&w=2070&auto=format&fit=crop",
+        "altText": "Lomba Voli Pantai",
+        "date": "15 SEPTEMBER 2025",
+        "title": "Kompetisi Voli Pantai",
+        "description": "Saksikan tim-tim terbaik bertanding memperebutkan gelar juara dalam turnamen voli tahunan."
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1533237264876-5d81b3b3a2e2?q=80&w=2070&auto=format&fit=crop",
+        "altText": "Bazaar Kuliner",
+        "date": "5-7 OKTOBER 2025",
+        "title": "Bazaar Kuliner Nusantara",
+        "description": "Manjakan lidah dengan aneka jajanan dan makanan khas dari berbagai daerah di bazaar kuliner."
+      }
+    ],
+    "gallery": [
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070&auto=format&fit=crop",
+        "altText": "Pemandangan pantai Lamaru dari samping"
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=1968&auto=format&fit=crop",
+        "altText": "Deburan ombak di Pantai Lamaru"
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1520454974749-611b7248ff25?q=80&w=2070&auto=format&fit=crop",
+        "altText": "Suasana sore hari di pantai"
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-153896417-4d7d92ed965e?q=80&w=2070&auto=format&fit=crop",
+        "altText": "Jejak kaki di pasir pantai"
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=1928&auto=format&fit=crop",
+        "altText": "Pohon kelapa di tepi pantai"
+      }
+    ]
+  }

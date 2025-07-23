@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Lamaru - Pesona Pantai di Balikpapan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-umbrella-beach"></i> Visit Lamaru</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Beranda</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Wisata</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#tentang">Tentang Pantai Lamaru</a></li>
+                            <li><a class="dropdown-item" href="#tentang">Informasi Umum</a></li>
+                            <li><a class="dropdown-item" href="#tentang">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#event">Event</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section" id="hero">
+        <div class="container">
+            <h1>Selamat Datang di Pantai Lamaru</h1>
+            <p>Nikmati keindahan pasir putih, deburan ombak yang menenangkan, dan rimbunnya pohon cemara di salah satu pantai terbaik di Balikpapan.</p>
+            <a href="#tentang" class="btn btn-primary btn-lg">Jelajahi Sekarang</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="tentang">
+            <div class="container">
+                <h2 class="section-title">Tentang Pantai Lamaru</h2>
+                <p class="lead text-center mb-5" style="max-width: 800px; margin: 0 auto;">Pantai Lamaru merupakan destinasi wisata favorit di Balikpapan yang menawarkan pemandangan eksotis dengan deretan pohon cemara yang rindang di sepanjang bibir pantai. Berbeda dari pantai pada umumnya, suasana sejuk dan teduh ini menjadikannya tempat yang sempurna untuk bersantai bersama keluarga dan teman.</p>
+                <div class="row mt-5">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h3 class="mb-3"><i class="fa-solid fa-circle-info me-2 text-primary"></i>Informasi Umum</h3>
+                        <ul class="list-group list-group-flush info-list">
+                            <li class="list-group-item"><i class="fa-solid fa-ticket"></i><strong>Harga Tiket:</strong> Rp 25.000 / orang</li>
+                            <li class="list-group-item"><i class="fa-solid fa-clock"></i><strong>Jam Buka:</strong> Setiap Hari, 07:00 - 18:00 WITA</li>
+                            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i><strong>Lokasi:</strong> Jl. Pantai Lamaru, Balikpapan Timur</li>
+                            <li class="list-group-item"><i class="fa-solid fa-car"></i><strong>Parkir:</strong> Motor Rp 5.000, Mobil Rp 10.000</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="mb-3"><i class="fa-solid fa-person-swimming me-2 text-primary"></i>Fasilitas & Aktivitas</h3>
+                        <ul class="list-group list-group-flush info-list">
+                            <li class="list-group-item"><i class="fa-solid fa-campground"></i>Tersedia Gazebo dan area piknik</li>
+                            <li class="list-group-item"><i class="fa-solid fa-utensils"></i>Warung makan dan minuman</li>
+                            <li class="list-group-item"><i class="fa-solid fa-restroom"></i>Toilet umum dan kamar ganti</li>
+                            <li class="list-group-item"><i class="fa-solid fa-person-skiing"></i>Penyewaan Banana Boat & Jet Ski</li>
+                            <li class="list-group-item"><i class="fa-solid fa-tree"></i>Kawasan hutan mangrove untuk dijelajahi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="event" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Event Terbaru</h2>
+                <div id="event-container" class="row g-4 justify-content-center"></div>
+                <div class="text-center mt-5">
+                    <a href="event.html" class="btn btn-primary">Lihat Semua Event</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeri">
+            <div class="container">
+                <h2 class="section-title">Galeri</h2>
+                <div id="gallery-container" class="row g-4"></div>
+                <div class="text-center mt-5">
+                    <a href="galeri.html" class="btn btn-primary">Lihat Galeri Lengkap</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontak" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Hubungi Kami</h2>
+                <div class="row">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <p>Punya pertanyaan, saran, atau ingin bekerja sama? Jangan ragu untuk menghubungi kami melalui form di samping atau detail kontak di bawah ini.</p>
+                        <div class="mt-4">
+                            <p><i class="fas fa-map-marker-alt fa-fw me-2 text-primary"></i> Jl. Pantai Lamaru, Lamaru, Kec. Balikpapan Timur, Kota Balikpapan, Kalimantan Timur</p>
+                            <p><i class="fas fa-phone fa-fw me-2 text-primary"></i> (0542) 123-456 (Humas)</p>
+                            <p><i class="fas fa-envelope fa-fw me-2 text-primary"></i> info@visitlamaru.com</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="#" method="POST">
+                            <div class="mb-3"><label for="nama" class="form-label">Nama Anda</label><input type="text" class="form-control" id="nama" required></div>
+                            <div class="mb-3"><label for="email" class="form-label">Alamat Email</label><input type="email" class="form-control" id="email" required></div>
+                            <div class="mb-3"><label for="pesan" class="form-label">Pesan Anda</label><textarea class="form-control" id="pesan" rows="4" required></textarea></div>
+                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer py-4">
+        <div class="container text-center"><p>&copy; 2025 Visit Lamaru. All Rights Reserved.</p></div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        // Efek scroll untuk navbar
+        const nav = document.getElementById('mainNavbar');
+        window.onscroll = function () {
+            if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+                nav.classList.add("scrolled", "navbar-light");
+                nav.classList.remove("navbar-dark");
+            } else {
+                nav.classList.remove("scrolled", "navbar-light");
+                nav.classList.add("navbar-dark");
+            }
+        };
+
+        // Fungsi untuk memuat konten dinamis dari data.json
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Panggil fungsi untuk mengisi event
+                    const eventContainer = document.getElementById('event-container');
+                    data.events.forEach(event => {
+                        const eventCol = document.createElement('div');
+                        eventCol.className = 'col-lg-4 col-md-6';
+                        eventCol.innerHTML = `
+                            <div class="card event-card h-100">
+                                <img src="${event.imageUrl}" class="card-img-top" alt="${event.altText}">
+                                <div class="card-body">
+                                    <p class="card-date">${event.date}</p>
+                                    <h5 class="card-title">${event.title}</h5>
+                                    <p class="card-text">${event.description}</p>
+                                </div>
+                            </div>
+                        `;
+                        eventContainer.appendChild(eventCol);
+                    });
+
+                    // Panggil fungsi untuk mengisi galeri
+                    const galleryContainer = document.getElementById('gallery-container');
+                    data.gallery.forEach(image => {
+                        const galleryCol = document.createElement('div');
+                        galleryCol.className = 'col-lg-4 col-md-6 gallery-item';
+                        galleryCol.innerHTML = `<img src="${image.imageUrl}" class="img-fluid" alt="${image.altText}">`;
+                        galleryContainer.appendChild(galleryCol);
+                    });
+                })
+                .catch(error => console.error('Error loading data:', error));
+        });
+    </script>
+</body>
+</html>

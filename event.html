@@ -70,7 +70,7 @@
           <div class="col-lg-4">
             <h3 class="mb-3">Kalender Event</h3>
             <div id="calendar"></div>
-            <button id="reset-filter" class="btn btn-secondary w-100 mt-3" style="display: none;">Tampilkan Semua Event</button>
+            <button id="reset-filter" class="btn btn-primary w-100 mt-3" style="display: none;">Tampilkan Semua Event</button>
           </div>
           <div class="col-lg-8">
             <h3 class="mb-3">Daftar Event</h3>
@@ -93,7 +93,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const eventContainer = document.getElementById('event-container');
-      const eventDetailModal = document.getElementById('eventDetailModal');
+      const eventDetailModal = new bootstrap.Modal(document.getElementById('eventDetailModal'));
       let allEvents = [];
 
       const formatDateTime = (isoString) => {
@@ -122,13 +122,8 @@
                 <p class="card-date">${formatDateTime(event.datetime)}</p>
                 <h5 class="card-title">${event.title}</h5>
                 <p class="card-text">${event.description.substring(0, 80)}...</p>
-                <button type="button" class="btn btn-primary mt-auto" 
-                  data-bs-toggle="modal" 
-                  data-bs-target="#eventDetailModal"
-                  data-event-title="${event.title}"
-                  data-event-datetime="${event.datetime}"
-                  data-event-image="${event.imageUrl}"
-                  data-event-description="${event.description}">
+                <button type="button" class="btn btn-primary mt-auto show-detail-btn" 
+                  data-event-id="${event.title}">
                   Lihat Detail
                 </button>
               </div>
@@ -168,6 +163,18 @@
           }, 1000);
         }
       };
+      
+      const showModalWithEvent = (eventData) => {
+        if (!eventData) return;
+
+        document.getElementById('modalEventTitle').textContent = eventData.title;
+        document.getElementById('modalEventDate').textContent = formatDateTime(eventData.datetime);
+        document.getElementById('modalEventImage').src = eventData.imageUrl;
+        document.getElementById('modalEventImage').alt = eventData.altText;
+        document.getElementById('modalEventDescription').textContent = eventData.description;
+
+        eventDetailModal.show();
+      };
 
       const setupCalendar = () => {
         const calendarEl = document.getElementById('calendar');
@@ -175,27 +182,34 @@
           initialView: 'dayGridMonth',
           locale: 'id',
           height: 'auto',
-          events: allEvents.map(event => ({
-            title: event.title,
-            start: event.datetime
-          })),
+          events: allEvents,
           dateClick: function(info) {
             const selectedDate = info.dateStr;
             const filteredEvents = allEvents.filter(event => formatDate(event.datetime) === selectedDate);
             renderEvents(filteredEvents);
             document.getElementById('reset-filter').style.display = 'block';
+          },
+          // *** FUNGSI BARU: Menangani klik pada event di kalender ***
+          eventClick: function(info) {
+            info.jsEvent.preventDefault(); // Mencegah aksi default browser
+            // Karena 'events' di FullCalendar sekarang berisi objek event lengkap, kita bisa langsung menggunakannya.
+            showModalWithEvent(info.event.extendedProps);
           }
         });
         calendar.render();
-      };
-
+          // 🔧 FIX bug tampilan awal terpotong
+  setTimeout(() => {
+    window.dispatchEvent(new Event("resize"));
+    // atau pakai: calendar.updateSize();  // ini juga boleh
+  }, 100);
+};
       fetch('data.json')
         .then(response => {
           if (!response.ok) throw new Error("Gagal memuat data.json");
           return response.json();
         })
         .then(data => {
-          allEvents = data.events;
+          allEvents = data.events.map(event => ({ ...event, start: event.datetime }));
           renderEvents(allEvents);
           setupCountdown();
           setupCalendar();
@@ -210,17 +224,13 @@
         document.getElementById('reset-filter').style.display = 'none';
       });
 
-      eventDetailModal.addEventListener('show.bs.modal', function(event) {
-        const button = event.relatedTarget;
-        const title = button.getAttribute('data-event-title');
-        const datetime = button.getAttribute('data-event-datetime');
-        const image = button.getAttribute('data-event-image');
-        const description = button.getAttribute('data-event-description');
-
-        this.querySelector('#modalEventTitle').textContent = title;
-        this.querySelector('#modalEventDate').textContent = formatDateTime(datetime);
-        this.querySelector('#modalEventImage').src = image;
-        this.querySelector('#modalEventDescription').textContent = description;
+      // Menambahkan event listener ke parent container untuk detail modal
+      eventContainer.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('show-detail-btn')) {
+          const eventTitle = e.target.getAttribute('data-event-id');
+          const eventData = allEvents.find(event => event.title === eventTitle);
+          showModalWithEvent(eventData);
+        }
       });
     });
   </script>

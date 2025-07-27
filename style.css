@@ -153,14 +153,7 @@ section {
     font-size: 1rem;
     font-weight: 300;
 }
-
-/* Style untuk Kalender */
-#calendar {
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-}
-
+    
 /* --- Gallery Page Specifics --- */
 
 /* Style untuk wrapper video YouTube */
@@ -178,79 +171,131 @@ section {
     padding-top: 150px;
 }
 
-/* --- FullCalendar Customizations --- */
+/* ==== FULLCALENDAR CUSTOM STYLING ==== */
 
-/* Variabel Global untuk FullCalendar */
-:root {
-    --fc-border-color: #e9ecef;
-    --fc-today-bg-color: rgba(0, 180, 216, 0.15); /* Warna biru muda transparan untuk hari ini */
-    --fc-event-bg-color: var(--primary-color);
-    --fc-event-border-color: var(--primary-color);
-    --fc-event-text-color: #fff;
+/* Struktur dasar calendar */
+.fc {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    padding: 1rem;
+    transition: all 0.3s ease;
   }
   
-  /* Kustomisasi Tampilan Kalender */
-  #calendar {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  /* Toolbar (bulan, tahun, navigasi) */
+  .fc-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 60px;
+    margin-bottom: 1rem;
   }
-  
-  /* Mengganti gaya tombol (Prev, Next, Today, dll.) */
-  .fc .fc-button-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    box-shadow: none !important;
-    transition: background-color 0.2s, border-color 0.2s;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-  }
-  
-  .fc .fc-button-primary:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-  }
-  
-  .fc .fc-button-primary:disabled {
-    background-color: #6c757d;
-    border-color: #6c757d;
-  }
-  
-  .fc .fc-button-primary:focus,
-  .fc .fc-button-primary:active {
-    box-shadow: none !important;
-  }
-  
-  /* Mengganti gaya judul (e.g., "Juli 2025") */
-  .fc .fc-toolbar-title {
-    font-size: 1.75rem;
+  .fc-toolbar-title {
+    font-size: 1.25rem;
     font-weight: 600;
-    color: var(--primary-color);
+    min-width: 250px;
+    color: #333;
+  }
+  .fc .fc-button {
+    background-color: #0d6efd;
+    border: none;
+    color: #fff;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease;
+  }
+  .fc .fc-button:hover,
+  .fc .fc-button:focus {
+    background-color: #0b5ed7;
+    outline: none;
+    box-shadow: none;
   }
   
-  /* Memberi kursor pointer pada event agar terlihat bisa diklik */
-  .fc-daygrid-event,
-  .fc-timegrid-event,
-  .fc-list-event {
+  /* Header hari */
+  .fc .fc-col-header-cell {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dee2e6;
+    color: #343a40;
+  }
+  
+  /* Sel tanggal */
+  .fc .fc-daygrid-day {
+    border: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+  }
+  .fc .fc-daygrid-day-frame {
+    padding: 6px;
+  }
+  
+  /* Angka tanggal */
+  .fc-daygrid-day-number {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #212529;
+    text-decoration: none !important;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+  }
+  
+  /* Hover tanggal */
+  .fc-daygrid-day:hover .fc-daygrid-day-number {
+    color: #0d6efd;
+    text-decoration: underline;
     cursor: pointer;
   }
   
-  /* Memberi sedikit efek hover pada event */
-  .fc-daygrid-event:hover {
-    opacity: 0.85;
+  /* Highlight hari ini hanya jika di bulan aktif */
+  .fc-daygrid-day.fc-day-today:not(.fc-day-other) {
+    background-color: #e7f1ff;
+    border: 2px solid #0d6efd;
+  }
+  .fc-daygrid-day.fc-day-today.fc-day-other {
+    background-color: inherit;
+    border: 1px solid #e9ecef;
   }
   
-  /* Mengatur ulang tinggi agar tidak terlalu besar di mobile */
-  @media (max-width: 768px) {
-    #calendar {
-      padding: 1rem;
+  /* Event tampil menarik */
+  .fc-event {
+    background-color: #198754;
+    border: none;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fc-event:hover {
+    background-color: #157347;
+  }
+  
+  /* Tooltip dari event (jika dipakai) */
+  .fc-popover {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* Responsif mobile */
+  @media (max-width: 576px) {
+    .fc-toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
     }
-    .fc .fc-toolbar-title {
-      font-size: 1.25rem;
+    .fc-toolbar-title {
+      font-size: 1rem;
     }
     .fc .fc-button {
-      padding: 0.375rem 0.75rem;
-      font-size: 0.875rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
     }
   }
+  

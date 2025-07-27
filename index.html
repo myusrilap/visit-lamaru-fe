@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -27,13 +27,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Wisata</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#tentang">Tentang Pantai Lamaru</a></li>
                             <li><a class="dropdown-item" href="informasi.html">Informasi Umum</a></li>
                             <li><a class="dropdown-item" href="fasilitas.html">Fasilitas</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#event">Event</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="event.html">Event</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Hubungi Kami</a></li>
                 </ul>
             </div>
@@ -77,7 +76,7 @@
                             <li class="list-group-item"><i class="fa-solid fa-campground"></i>Tersedia Gazebo, area camping dan area piknik</li>
                             <li class="list-group-item"><i class="fa-solid fa-utensils"></i>Warung makan dan minuman</li>
                             <li class="list-group-item"><i class="fa-solid fa-restroom"></i>Toilet umum dan kamar ganti</li>
-                            <li class="list-group-item"><i class="fa-solid fa-person-skiing"></i>Penyewaan Banana Boat & Jet Ski</li>
+                            <li class="list-group-item"><i class="fa-solid fa-car-side"></i>Penyewaan ATV, Banana Boat dan Caddy</li>
                             <li class="list-group-item"><i class="fa-solid fa-tree"></i>Kawasan hutan untuk dijelajahi</li>
                         </ul>
                     </div>
@@ -110,20 +109,23 @@
                 <h2 class="section-title">Hubungi Kami</h2>
                 <div class="row">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <p>Punya pertanyaan, saran, atau ingin bekerja sama? Jangan ragu untuk menghubungi kami melalui form di samping atau detail kontak di bawah ini.</p>
+                        <p>Punya pertanyaan, saran, atau ingin bekerja sama? Jangan ragu untuk menghubungi kami melalui detail kontak di bawah ini.</p>
                         <div class="mt-4">
                             <p><i class="fas fa-map-marker-alt fa-fw me-2 text-primary"></i> Jl. Pantai Lamaru, Lamaru, Kec. Balikpapan Timur, Kota Balikpapan, Kalimantan Timur</p>
-                            <p><i class="fas fa-phone fa-fw me-2 text-primary"></i> (0542) 123-456 (Humas)</p>
-                            <p><i class="fas fa-envelope fa-fw me-2 text-primary"></i> info@visitlamaru.com</p>
+                            <p><i class="fas fa-phone fa-fw me-2 text-primary"></i> 0812 - 5111 - 9322</p>
+                            <p><i class="fa-brands fa-instagram fa-fw me-2 text-primary"></i> @pantailamarubalikpapan</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <form action="#" method="POST">
-                            <div class="mb-3"><label for="nama" class="form-label">Nama Anda</label><input type="text" class="form-control" id="nama" required></div>
-                            <div class="mb-3"><label for="email" class="form-label">Alamat Email</label><input type="email" class="form-control" id="email" required></div>
-                            <div class="mb-3"><label for="pesan" class="form-label">Pesan Anda</label><textarea class="form-control" id="pesan" rows="4" required></textarea></div>
-                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-                        </form>
+                        <div class="ratio ratio-16x9">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.750170425587!2d116.92053931475459!3d-1.261956999031787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df140c838e5a76b%3A0x86849b385b5b0dd!2sPantai%20Lamaru!5e0!3m2!1sid!2sid!4v1690448858883!5m2!1sid!2sid" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,7 +140,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-js@1.1.0/build/vanilla-calendar.min.js"></script>
 
     <script>
         // Efek scroll untuk navbar
@@ -155,30 +156,43 @@
 
         // Fungsi untuk memuat konten dinamis dari data.json
         document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- FUNGSI BARU UNTUK FORMAT TANGGAL ---
+            const formatSimpleDate = (isoString) => {
+                const date = new Date(isoString);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('id-ID', options);
+            };
+
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    // Panggil fungsi untuk mengisi event
+                    // Batasi hanya 3 event teratas untuk ditampilkan di beranda
+                    const eventsToShow = data.events.slice(0, 3);
                     const eventContainer = document.getElementById('event-container');
-                    data.events.forEach(event => {
+                    
+                    eventsToShow.forEach(event => {
                         const eventCol = document.createElement('div');
                         eventCol.className = 'col-lg-4 col-md-6';
+                        // --- PERBAIKAN KODE DI BAWAH INI ---
                         eventCol.innerHTML = `
                             <div class="card event-card h-100">
                                 <img src="${event.imageUrl}" class="card-img-top" alt="${event.altText}">
                                 <div class="card-body">
-                                    <p class="card-date">${event.date}</p>
+                                    <p class="card-date">${formatSimpleDate(event.datetime)}</p>
                                     <h5 class="card-title">${event.title}</h5>
-                                    <p class="card-text">${event.description}</p>
+                                    <p class="card-text">${event.description.substring(0, 80)}...</p>
                                 </div>
                             </div>
                         `;
                         eventContainer.appendChild(eventCol);
                     });
 
-                    // Panggil fungsi untuk mengisi galeri
+                    // Batasi hanya 6 gambar untuk ditampilkan di beranda
+                    const galleryToShow = data.gallery.slice(0, 6);
                     const galleryContainer = document.getElementById('gallery-container');
-                    data.gallery.forEach(image => {
+                    
+                    galleryToShow.forEach(image => {
                         const galleryCol = document.createElement('div');
                         galleryCol.className = 'col-lg-4 col-md-6 gallery-item';
                         galleryCol.innerHTML = `<img src="${image.imageUrl}" class="img-fluid" alt="${image.altText}">`;
